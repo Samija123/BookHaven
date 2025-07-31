@@ -1,0 +1,56 @@
+@tailwind  base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+
+body {
+  background-color: #f5f5dc;
+  color: #2d1b0e;
+}
+
+.cursive-font {
+  font-family: 'Dancing Script', cursive;
+}
+
+.welcome-button {
+  position: relative;
+  background: linear-gradient(45deg, #228b22 0%, #3a5f3a 50%, #f5f5dc 100%);
+  border: 3px solid #228b22;
+  border-radius: 60px;
+  padding: 20px 50px;
+  box-shadow: 
+    0 0 30px rgba(34, 139, 34, 0.4),
+    inset 0 2px 10px rgba(245, 245, 220, 0.3);
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+
+.welcome-button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(245, 245, 220, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+}
+
+.welcome-button:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 
+    0 15px 40px rgba(34, 139, 34, 0.6),
+    inset 0 2px 15px rgba(245, 245, 220, 0.4);
+}
+
+.welcome-button:hover::before {
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+  100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+} 
+ 
